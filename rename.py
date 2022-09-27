@@ -9,5 +9,6 @@ def fun(dir):
             os.rename(entry.path, "./"+new_name)
         else:
             fun(dir+"/"+entry.name)
+            os.rmdir(entry.path)
 
 fun(".")
