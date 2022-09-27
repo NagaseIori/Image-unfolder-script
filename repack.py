@@ -12,7 +12,7 @@ for entry in entries:
             continue
         nlist[new_path.rfind("_")] = '\\'
         new_path = ''.join(nlist) ;
-        new_path = new_path.replace("_", "/").replace("__", "_");
+        new_path = new_path.replace("_", "/").replace("-U", "_");
         # print(new_path[0:new_path.rfind("\\")]);
         if not os.path.exists(new_path[0:new_path.rfind("\\")]):
             os.makedirs(new_path[0:new_path.rfind("\\")])
