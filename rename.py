@@ -9,7 +9,10 @@ def fun(dir, head, floor):
             new_name = entry.path[:head]+entry.path[head:].replace("_", "-U").replace("\\", "_").replace("/", "_")
             print("Rename %s to %s."%(entry.path, new_name))
             if not os.path.exists(new_name):
-                os.rename(entry.path, new_name)
+                if entry.path.find("-U") != -1:
+                    print("File %s has been renamed. Skipped."%(entry.path))
+                else:
+                    os.rename(entry.path, new_name)
             else:
                 print("File %s has existed. Skipped." % new_name)
         else:
