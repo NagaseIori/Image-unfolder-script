@@ -12,7 +12,7 @@ try:
         library = json.load(f)
         f.close()
     print("Found rename library.")
-    print(library)
+    # print(library)
 except:
     library = None
     print("Library not found. Fallback to classic methods.")
