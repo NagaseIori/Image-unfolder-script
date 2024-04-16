@@ -23,7 +23,10 @@ def fun(dir, head, floor):
         else:
             fun(dir+"\\"+entry.name, head+(len(entry.name)+1 if floor>0 else 0), floor-1)
             if floor<=0:
-                os.rmdir(entry.path)
+                try:
+                    os.rmdir(entry.path)
+                except:
+                    pass
 
 try:
     with open(".rename_lib", "r") as f:
