@@ -37,7 +37,11 @@ except:
     print("Create a new rename library.")
     library = dict()
 
-floor = int(input("floor:"))
+floor = input("floor:")
+if floor == "":
+    floor = 0
+else:
+    floor = int(floor)
 fun(".", 2, floor)
 
 with open(".rename_lib", "w") as f:
@@ -45,5 +49,3 @@ with open(".rename_lib", "w") as f:
     f.close()
 
 input("Press any key to exit.")
-
-os.remove(argv[0])
